@@ -45,6 +45,7 @@
       } else if (desc.url) {
         var req = new XMLHttpRequest();
         req.open('GET', desc.url);
+        req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         req.responseType = 'arraybuffer';
         req.onload = function() {
           if (!req.response) {
